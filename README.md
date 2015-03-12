@@ -1,18 +1,18 @@
 # TfsGitAdmin
-Team Foundation Server 2013 utility to manage Git repositories in a Project.
+Team Foundation Server 2013 utility to manage Git repositories in a Team Project.
 
-Some information on API used is in my blog post [Automating TeamProject creation](http://blog.casavian.eu/blog/2014/10/30/automating-project-creation/).
+Some information on API used can be found in my blog post [Automating TeamProject creation](http://blog.casavian.eu/blog/2014/10/30/automating-project-creation/).
 
 ## Usage
 
 Available commands are:
 
->    add         - Adds an additional Git repository
->    create      - Creates the default Git repository on a Team Project without version control
->    delete      - Deletes an existing Git repository
->    list        - List all Git repositories in a Team Project
->    rename      - Renames an existing Git repository
->    help <name> - For help with one of the above commands
+ * add         - Adds an additional Git repository
+ * create      - Creates the default Git repository on a Team Project without version control
+ * delete      - Deletes an existing Git repository
+ * list        - List all Git repositories in a Team Project
+ * rename      - Renames an existing Git repository
+ * help <name> - For help with one of the above commands
 
 ## Examples
 
