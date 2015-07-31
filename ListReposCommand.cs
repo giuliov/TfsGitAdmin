@@ -18,19 +18,18 @@ namespace TfsGitAdmin
             if (repos.Any())
             {
                 // nice formatting code
-                const int maxColWidth = 20;
                 const string col1Title = "Name";
                 const string col2Title = "RemoteUrl";
-                int longest = repos.Max(r => r.Name.Length);
-                int colWidth = Math.Min(Math.Max(col1Title.Length, longest), maxColWidth);
+                int largest = repos.Max(r => r.Name.Length);
+                int colWidth = largest + 1;
 
                 // title
-                Console.WriteLine("{0,-" + maxColWidth.ToString() + "} {1}", col1Title, col2Title);
-                Console.WriteLine(string.Empty.PadRight(maxColWidth + col2Title.Length + 1, '-'));
+                Console.WriteLine("{0,-" + colWidth.ToString() + "} {1}", col1Title, col2Title);
+                Console.WriteLine(string.Empty.PadRight(colWidth + col2Title.Length + 1, '-'));
                 // rows
                 foreach (var repo in repos)
                 {
-                    Console.WriteLine("{0,-" + maxColWidth.ToString() + "} {1}", repo.Name, repo.RemoteUrl);
+                    Console.WriteLine("{0,-" + colWidth.ToString() + "} {1}", repo.Name, repo.RemoteUrl);
                 }//for
             }
             else
