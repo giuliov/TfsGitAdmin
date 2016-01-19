@@ -1,4 +1,5 @@
 ﻿using ManyConsole;
+using NDesk.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,15 @@ namespace TfsGitAdmin
     {
         static int Main(string[] args)
         {
-            Console.WriteLine(GetHeader());
+            bool displayHeader = true;
+            var preset = new OptionSet()
+                .Add("no|nologo", n => displayHeader = false);
+            preset.Parse(args);
+
+            if (displayHeader)
+            {
+                Console.WriteLine(GetHeader());
+            }
 
             try
             {

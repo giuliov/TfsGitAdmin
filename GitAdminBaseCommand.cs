@@ -11,6 +11,7 @@ namespace TfsGitAdmin
     abstract class GitAdminBaseCommand : ConsoleCommand
     {
         internal bool ShowHelp { get; set; }
+        internal bool NoLogo { get; set; }
 
         internal string TfsUrl { get; set; }
         internal string TeamProjectCollection { get; set; }
@@ -18,6 +19,8 @@ namespace TfsGitAdmin
 
         public GitAdminBaseCommand()
         {
+            this.HasOption("no|nologo", "Hide initial banner",
+              value => this.NoLogo = value != null);
             this.HasOption("h|help",  "Shows this message and exit",
               value => this.ShowHelp = value != null);
             this.HasRequiredOption("s|tfsUrl=",  "TFS Url, e.g. http://localhost:8080/tfs/",
